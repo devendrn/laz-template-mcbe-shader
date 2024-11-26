@@ -1,0 +1,6 @@
+.venv/
+build/
+src-materials/
+
+shaderc*
+*.material.bin
