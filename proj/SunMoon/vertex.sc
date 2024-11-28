@@ -1,13 +1,10 @@
-$input a_color0, a_position
+$input a_color0, a_position, a_texcoord0
 #ifdef INSTANCING
 $input i_data1, i_data2, i_data3
 #endif
-$output v_color0
+$output v_texcoord0
 
 #include <bgfx_shader.sh>
-
-uniform vec4 SkyColor;
-uniform vec4 FogColor;
 
 void main() {
   #ifdef INSTANCING
@@ -17,8 +14,8 @@ void main() {
   #endif
   vec4 worldPos = model * vec4(a_position, 1.0);
 
-  v_color0 = mix(SkyColor, FogColor, a_color0.x);
+
+  v_texcoord0 = a_texcoord0;
 
   gl_Position = u_viewProj * vec4(worldPos.xyz, 1.0);
 }
-

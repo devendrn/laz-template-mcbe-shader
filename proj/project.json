@@ -1,6 +1,6 @@
 {
   "base_profile": {
-    "platforms": ["ESSL_310"],
+    "platforms": ["ESSL_300"],
     "merge_source": ["../src-materials"],
     "exclude_patterns": [".*", "_*"],
     "include_search_paths": ["../include"]
@@ -8,7 +8,7 @@
   "profiles": {
     "android": {
       "macros": [],
-      "platforms": ["ESSL_310"]
+      "platforms": ["ESSL_300"]
     },
     "ios": {
       "macros": [],

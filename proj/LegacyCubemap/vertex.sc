@@ -1,0 +1,12 @@
+$input a_texcoord0, a_position
+$output v_texcoord0
+
+#include <bgfx_shader.sh>
+
+uniform mat4 CubemapRotation;
+
+void main() {
+  v_texcoord0 = a_texcoord0;
+  gl_Position = u_modelViewProj * (CubemapRotation * vec4(a_position, 1.0));
+}
+
