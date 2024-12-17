@@ -7,6 +7,6 @@ uniform mat4 CubemapRotation;
 
 void main() {
   v_texcoord0 = a_texcoord0;
-  gl_Position = u_modelViewProj * (CubemapRotation * vec4(a_position, 1.0));
+  gl_Position = mul(u_modelViewProj, mul(CubemapRotation, vec4(a_position, 1.0)));
 }
 

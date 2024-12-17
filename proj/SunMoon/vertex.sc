@@ -12,10 +12,10 @@ void main() {
   #else
     mat4 model = u_model[0];
   #endif
-  vec4 worldPos = model * vec4(a_position, 1.0);
+  vec4 worldPos = mul(model, vec4(a_position, 1.0));
 
 
   v_texcoord0 = a_texcoord0;
 
-  gl_Position = u_viewProj * vec4(worldPos.xyz, 1.0);
+  gl_Position = mul(u_viewProj, vec4(worldPos.xyz, 1.0));
 }
