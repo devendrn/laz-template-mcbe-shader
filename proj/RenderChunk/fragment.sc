@@ -13,7 +13,7 @@ $input v_texcoord0, v_color0, v_fog, v_lightmapUV
 
 void main() {
   #ifndef DEPTH_ONLY_OPAQUE
-    vec4 diffuse = texture(s_MatTexture, v_texcoord0);
+    vec4 diffuse = texture2D(s_MatTexture, v_texcoord0);
 
     #ifdef ALPHA_TEST
       if (diffuse.a < 0.5) {
@@ -28,7 +28,7 @@ void main() {
       diffuse *= v_color0;
     #endif
 
-    diffuse.rgb *= texture(s_LightMapTexture, v_lightmapUV).xyz;
+    diffuse.rgb *= texture2D(s_LightMapTexture, v_lightmapUV).xyz;
     diffuse.rgb = mix(diffuse.rgb, v_fog.rgb, v_fog.a);
 
     gl_FragColor = diffuse;

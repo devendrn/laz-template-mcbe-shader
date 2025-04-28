@@ -5,5 +5,5 @@ $input v_texcoord0
 SAMPLER2D_AUTOREG(s_MatTexture);
 
 void main() {
-  gl_FragColor = texture(s_MatTexture, v_texcoord0);
+  gl_FragColor = texture2D(s_MatTexture, v_texcoord0);
 }
